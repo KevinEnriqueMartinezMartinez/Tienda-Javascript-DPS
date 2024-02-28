@@ -1,0 +1,288 @@
+/*Globales */
+*::after,
+*::before,
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: 'Lato';
+    color: #333;
+}
+
+.icon-cart{
+    width: 40px;
+    height: 40px;
+    stroke: #000;
+
+}
+
+.icon-cart:hover{
+    cursor: pointer;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* Header */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 40px 0;
+    
+}
+.container-icon{
+    position: relative;
+}
+
+.count-products{
+    position: absolute;
+    top: 55%;
+    right: 0;
+
+
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    
+
+}
+
+#contador-productos{
+    font-size: 12px;
+
+}
+
+.container-cart-products{
+    position: absolute;
+    top: 50px;
+    background-color: #fff;
+    width: 400px;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+
+
+}
+
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+    
+
+}
+
+.titulo-producto-carrito{
+    font-size: 20px;
+
+
+}
+
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+
+
+}
+
+.producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+
+}
+
+.icon-close{
+    width: 25px;
+    height: 25px;
+
+}
+
+.icon-close:hover{
+    stroke: red;
+    cursor:pointer;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+
+}
+.cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-pagar {
+    font-size: 20px;
+    font-weight: 900;
+
+}
+
+.hidde-cart{
+    display: none;
+}
+
+
+
+
+/* Main */
+
+.container-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.items{
+    border-radius: 10px;
+}
+
+.items:hover{
+    box-shadow: 0 10px 20px   rgba(0, 0, 0,0.20);
+}
+
+
+.items img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+
+}
+.items figure {
+    overflow: hidden;
+}
+
+.items:hover img{
+    transform: scale(1.2);
+
+}
+
+.info-product{
+
+    padding: 15px  30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+
+
+
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.info-product button{
+    border: none;
+    background: none;
+    background-color: black;
+    color: #fff;
+    padding: 15px 10px;
+    cursor: pointer;
+
+}
+
+.hidden-cart {
+    display: none;
+}
+
+.cart-empty{
+
+    padding: 20px;
+    text-align: center;
+}
+
+.quantity-available{
+
+    font-weight: 500;
+    font-size: 20px;
+    gap: 15px;
+}
+
+
+.factura-container.hidden {
+    display: none;
+  }
+
+
+  /* Estilos para el botón de confirmar compra */
+.btn-confirmar-compra {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-confirmar-compra:hover {
+    background-color: #3e8e41;
+  }
+  
+ 
+
+  /* Estilos para la factura en SweetAlert2 */
+.factura {
+    text-align: center;
+}
+
+.factura-detalle {
+    margin-top: 20px;
+}
+
+.factura-header, .factura-item, .factura-total {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.factura-item, .factura-total {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.factura-total {
+    margin-top: 20px;
+    border-top: 2px solid #333;
+    padding-top: 10px;
+}
+
+/* Estilos para el botón de confirmar compra */
+.btn-confirmar-compra {
+    /* ... (tus estilos actuales) */
+    margin-top: 20px; /* Espacio adicional para separar el botón de la factura */
+}

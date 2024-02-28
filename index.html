@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device, initial-scale=1.0">
+    <title> Tienda Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Tienda</h1>
+        <div class="container-icon">
+            <div class="container-cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                  </svg>
+                  <div class="count-products">
+                    <span id="contador-productos">0
+    
+                    </span>
+                  </div>
+
+            </div>
+            
+              <div class="container-cart-products hidden-cart">
+                <div class="row-product">
+                <!--div class="cart-product">
+                        <div class="info-cart-product">
+                            <span class="producto-carrito">1</span>
+                            <p class="titulo-producto-carrito">Zapatos Nike</p>
+                            <span class="precio-producto-carrito">$80.00</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                          </svg>
+                          
+                    </div-->
+
+                </div>
+                
+                <div class="cart-total">
+                    <h3>Total:</h3>
+                    <span class="total-pagar">
+                        $200.00
+                    </span>
+             
+                <button id="confirmarCompraBtn" class="btn-confirmar-compra">Confirmar Compra</button>
+
+
+                </div>
+
+              </div>
+               <!-- Factura Container -->
+    <div class="factura-container"></div>
+                 </div>
+                </header>
+
+                 <div class="container-items">
+                    <div class="items">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1570612101900-0cbd96d73d40?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25pa2Vyc3xlbnwwfHwwfHx8MA%3D%3D"
+                             alt="Producto">
+                        </figure>
+                        <div class="info-product">
+                            <h2> Zapatos Jordan</h2>
+                            <p class="price"> Precio: $80.00 </p>
+                            <p class="quantity-available">Cantidad disponible: <span class="available-quantity">10</span></p>
+                            <button class="btn-add-cart"> Añadir al carrito </button>
+
+                        </div>
+
+                            
+                        
+                    </div>
+                    <div class="items">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1551489186-cf8726f514f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNuaWtlcnN8ZW58MHx8MHx8fDA%3D"
+                             alt="Producto">
+                        </figure>
+                        <div class="info-product">
+                            <h2> Adidas Yeezy</h2>
+                            <p class="price"> Precio: $120.00 </p>
+                            <p class="quantity-available">Cantidad disponible: <span class="available-quantity">10</span></p>
+                            <button class="btn-add-cart"> Añadir al carrito </button>
+
+                        </div>
+
+                            
+                        
+                    </div>
+                    <div class="items">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNuaWtlcnN8ZW58MHx8MHx8fDA%3D"
+                             alt="Producto">
+                        </figure>
+                        <div class="info-product">
+                            <h2> Zapatos Air Force One</h2>
+                            <p class="price"> Precio: $170.00 </p>
+                            <p class="quantity-available">Cantidad disponible: <span class="available-quantity">10</span></p>
+                            <button class="btn-add-cart"> Añadir al carrito </button>
+
+                        </div>
+
+                            
+                        
+                    </div>
+                    <div class="items">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNuaWtlcnN8ZW58MHx8MHx8fDA%3D"
+                             alt="Producto">
+                        </figure>
+                        <div class="info-product">
+                            <h2> Zapatos Air Force One</h2>
+                            <p class="price"> Precio: $170.00 </p>
+                            <p class="quantity-available">Cantidad disponible: <span class="available-quantity">10</span></p>
+                            <button class="btn-add-cart"> Añadir al carrito </button>
+
+                        </div>
+
+                            
+                        
+                    </div>
+                    <div class="items">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1588361861040-ac9b1018f6d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNuaWtlcnN8ZW58MHx8MHx8fDA%3D"
+                             alt="Producto">
+                        </figure>
+                        <div class="info-product">
+                            <h2> Zapatos Air Force One</h2>
+                            <p class="price"> Precio: $170.00 </p>
+                            <p class="quantity-available">Cantidad disponible: <span class="available-quantity">10</span></p>
+                            <button class="btn-add-cart"> Añadir al carrito </button>
+
+                        </div>
+
+                            
+                        
+                    </div>
+                    <div class="items">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1603787081207-362bcef7c144?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNuaWtlcnN8ZW58MHx8MHx8fDA%3D"
+                             alt="Producto">
+                        </figure>
+                        <div class="info-product">
+                            <h2> Zapatos Air Force One</h2>
+                            <p class="price"> Precio: $170.00 </p>
+                            <p class="quantity-available">Cantidad disponible: <span class="available-quantity">10</span></p>
+                            <button class="btn-add-cart"> Añadir al carrito </button>
+
+                        </div>
+
+                            
+                        
+                    </div>
+                 </div>
+    <script src="../Tienda Js/js/index.js"></script>
+
+    
+
+</body>
+</html>
