@@ -4,9 +4,20 @@ const facturaContainer = document.querySelector('.factura-container');
 facturaContainer.classList.add('hidden');
 
 
-btnCart.addEventListener('click', () =>{
-    containerCartProducts.classList.toggle('hidden-cart')
-})
+
+btnCart.addEventListener('click', () => {
+    // Verifica si el carrito tiene productos antes de mostrar/ocultar
+    if (allProducts.length > 0) {
+        containerCartProducts.classList.toggle('hidden-cart');
+    } else {
+        // Si el carrito está vacío, muestra un SweetAlert
+        Swal.fire({
+            icon: 'info',
+            title: 'Carrito Vacío',
+            text: 'No hay productos en el carrito',
+        });
+    }
+});
 
 
 // se crearon variables 
@@ -62,7 +73,11 @@ productslist.addEventListener('click', e => {
 
             showHTML();
         } else {
-            alert('No hay suficiente cantidad disponible para añadir este producto al carrito.');
+            Swal.fire({
+                icon: 'info',
+                title: 'No hay producto en existencia',
+                text: '¡Producto agotado!',
+            });
         }
     }
 });
