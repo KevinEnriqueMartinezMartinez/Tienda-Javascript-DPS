@@ -4,7 +4,6 @@ const facturaContainer = document.querySelector('.factura-container');
 facturaContainer.classList.add('hidden');
 
 
-
 btnCart.addEventListener('click', () => {
     // Verifica si el carrito tiene productos antes de mostrar/ocultar
     if (allProducts.length > 0) {
@@ -18,7 +17,6 @@ btnCart.addEventListener('click', () => {
         });
     }
 });
-
 
 // se crearon variables 
 
@@ -99,15 +97,7 @@ rowProduct.addEventListener('click', (e) => {
 //funcion para mostrar html
 
 const showHTML = () => {
-
-    if(!allProducts.length){
-        containerCartProducts.innerHTML=`
-        <p class="cart-empty"> El carrito esta vacio </P>
-        `
-    }
-
-    //limpiar html 
-    rowProduct.innerHTML ='';
+    rowProduct.innerHTML = '';
 
     let total = 0;
     let totalOfProducts = 0;
@@ -117,40 +107,37 @@ const showHTML = () => {
         containerProduct.classList.add('cart-product');
 
         containerProduct.innerHTML =`
-
-                <div class="info-cart-product">
+            <div class="info-cart-product">
                 <span class="producto-carrito">${product.quantity}</span>
                 <p class="titulo-producto-carrito">${product.title}</p>
-                <span class="precio-producto-carrito">${product.Price}</span>
+                <span class="precio-producto-carrito">$${product.Price}</span>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>
+            </svg>`;
                 
-                
-                `
+        rowProduct.appendChild(containerProduct);
 
-                rowProduct.append(containerProduct)
-
-                total += product.quantity * parseFloat(product.Price.replace('$', ''));
-    totalOfProducts += product.quantity;
-
-        
+        total += product.quantity * parseFloat(product.Price.replace('$', ''));
+        totalOfProducts += product.quantity;
     });
-    valorTotal.innerText = `$${total.toFixed(2)}`; // Asegúrate de que el total tenga dos decimales
+
+    valorTotal.innerText = `$${total.toFixed(2)}`;
     countProducts.innerText = totalOfProducts;
 
-
+    // Oculta el contenedor del carrito si no hay productos
+    if (allProducts.length === 0) {
+        containerCartProducts.classList.add('hidden-cart');
+    }
 };
 
 
-// Agrega estas líneas al final de tu código
 
 const btnConfirmarCompra = document.getElementById('confirmarCompraBtn');
 
 btnConfirmarCompra.addEventListener('click', () => {
     if (allProducts.length > 0) {
-        // Confirmar la compra y generar la factura
+        // Confirma la compra y generar la factura
         confirmarCompra();
     } else {
         alert('El carrito está vacío. Agregue productos antes de confirmar la compra.');
