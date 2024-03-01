@@ -166,12 +166,105 @@ const confirmarCompra = () => {
 
     // Utiliza SweetAlert2 para mostrar la factura en una ventana emergente
     Swal.fire({
-        title: 'Detalle de compra',
+        title: 'Carrito de compras',
         html: facturaContainer.innerHTML,
         showCloseButton: true,
         showConfirmButton: false,
+        showDenyButton: true,
+        denyButtonText: 'Pagar Ahora',
+        customClass: {
+            denyButton: 'btn-black'
+        }
+    }).then((result) => {
+        if (result.isDenied) {
+            // Mostrar Sweet Alert con el mensaje de carga
+            Swal.fire({
+                title: 'Procesando pago...',
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showCloseButton: true,
+                showConfirmButton: false,
+                onBeforeOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+    
+            // Simular una acción de pago después de un tiempo de espera
+            setTimeout(() => {
+                
+                // Obtener la fecha actual
+                const currentDate = new Date().toLocaleDateString('es-ES', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+    
+                // html del vouche para el cliente
+                const facturaHtml = `
+                    <div class="voucher">
+                        <h1>Voucher de Pago</h1>
+                        <div class="voucher-info">
+                            <p><strong>Tienda Online S.A de C.V</strong></p>
+                            <p><strong>NIT:</strong> 123456789</p>
+                            <p>Calle a Plan del Pino Km 1 1/2. Ciudadela Don Bosco, Soyapango, El Salvador</p>
+                            <p>www.tiendaonline.com</p>
+                            <p>+503 2290 9093</p>
+                            <hr>
+                            <p><strong>Fecha:</strong> ${currentDate}</p>
+                            <p><strong>Monto:</strong> ${valorTotal.innerText}</p>
+                            <p><strong>Descripción:</strong> Compras en tienda Online</p>
+                            <p><strong>Cliente:</strong> John Smith</p>
+                        </div>
+
+                        <table class="table-voucher">
+                            <thead>
+                                <tr>
+                                    <th colspan="4" style="text-align: center;">Detalle de compra</th>
+                                </tr>
+                                <tr align="left">
+                                    <th>C.</th>
+                                    <th>Producto</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${allProducts.map(product => `
+                                    <tr align="left">
+                                        <td>${product.quantity}</td>    
+                                        <td>${product.title}</td>
+                                        <td>$${product.Price}</td>
+                                    </tr>
+                                `).join('')}
+                                <tr>
+                                    <th colspan="4" >Total ${valorTotal.innerText}</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="voucher-info">
+                            <p style="text-align: center;">Gracias por tu compra</p>
+                        </div>
+                        
+                    </div>
+                `;
+
+    
+                // Mostrar Sweet Alert con el vaucher de pago
+                Swal.fire({
+                    html: facturaHtml,
+                    showCloseButton: true,
+                    showConfirmButton: false,
+                });
+
+                // limpiamos el carrito para simular la accion despues de pago
+                limpiarCarrito();
+
+            }, 2000); // Tiempo de espera simulado (en milisegundos)
+        }
     });
+    
 };
+
 
 const mostrarFactura = () => {
     // Limpia el contenido anterior de la factura
@@ -182,7 +275,6 @@ const mostrarFactura = () => {
     facturaHTML.classList.add('factura');
 
     facturaHTML.innerHTML = `
-        <h2>Factura de Compra</h2>
         <div class="factura-detalle">
             <div class="factura-header">
                 <span>Producto</span>
@@ -201,8 +293,7 @@ const mostrarFactura = () => {
                     <span>$${(product.quantity * parseFloat(product.Price.replace('$', ''))).toFixed(2)}</span>
                 </div>
             `).join('')}
-            <hr>
-
+            <br>
             <!-- Agrega el total general de la compra -->
             <div class="factura-total">
                 <span>Total General</span>
@@ -219,3 +310,9 @@ const mostrarFactura = () => {
 };
 
 
+const limpiarCarrito = () => {
+    // Limpia el carrito
+    allProducts = [];
+    // Actualiza la visualización del carrito
+    showHTML(); 
+};
