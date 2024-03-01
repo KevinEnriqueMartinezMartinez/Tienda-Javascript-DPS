@@ -287,7 +287,6 @@ header{
     margin-top: 20px; /* Espacio adicional para separar el botón de la factura */
 }
 
-
 /* estilos del voucher de compra */
 .voucher {
     max-width: 600px;
@@ -314,4 +313,27 @@ header{
 .btn-black{
     background-color: black !important;
     color: white !important;
+}
+
+/* estilos para la tabla del voucher */
+.table-voucher {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.table-voucher th {
+    padding: 8px;
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+.table-voucher td {
+    padding: 8px;
+    border-top: 1px solid #ddd;
+}
+
+.table-voucher tr:nth-child(odd) {
+    background-color: #f9f9f9;
 }
