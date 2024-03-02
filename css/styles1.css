@@ -178,6 +178,7 @@ header{
 }
 .items figure {
     overflow: hidden;
+    border-radius: 20px; 
 }
 
 .items:hover img{
@@ -252,7 +253,12 @@ header{
     background-color: #3e8e41;
   }
   
- 
+  .btn-add-cart:hover {
+    background-color: #4e0b85;
+    border: 1px solid #6d4aa5;
+    transform: translateY(3px); /* Desplazamos el botón hacia abajo 3 píxeles al ser seleccionado */
+}
+
 
   /* Estilos para la factura en SweetAlert2 */
 .factura {
