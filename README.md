@@ -25,7 +25,7 @@ _Vista del carrito de compras con resumen de la orden._
 
 ## Instrucciones de Instalación
 
-1. Clona el repositorio: `git clone https://github.com/tu_usuario/tienda-de-zapatos.git`
+1. Clona el repositorio: `git clone https://github.com/KevinEnriqueMartinezMartinez/Tienda-Javascript-DPS`
 2. Abre el archivo `index.html` en tu navegador.
 
 ## Contribución
