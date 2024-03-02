@@ -1,9 +1,9 @@
-/* Ejemplo de una media query para pantallas pequeñas */
+/* Media Query para pantalla pequeÃ±as */
 @media only screen and (max-width: 600px) {
-    /* Estilos para pantallas pequeñas */
 }
 
-/*Globales */
+/*Estilos Generales del proyecto*/
+
 *::after,
 *::before,
 *{
@@ -19,6 +19,7 @@ body{
     color: #333;
 }
 
+/* estilo del icono del carrito */
 .icon-cart{
     width: 40px;
     height: 40px;
@@ -26,6 +27,7 @@ body{
 
 }
 
+/* estilo para al momento de seleccionar el carrito tenga un cursor pointer */
 .icon-cart:hover{
     cursor: pointer;
 }
@@ -46,6 +48,7 @@ header{
     position: relative;
 }
 
+/* estilo para el contador de los productos */
 .count-products{
     position: absolute;
     top: 55%;
@@ -63,11 +66,13 @@ header{
     
 
 }
-
+/* tamaÃ±o para el contador de productos */
 #contador-productos{
     font-size: 12px;
 
 }
+
+/* estilos para el contenedor de los productps */
 
 .container-cart-products{
     position: absolute;
@@ -82,6 +87,7 @@ header{
 
 }
 
+/* estilo para cart del producto */
 .cart-product{
     display: flex;
     align-items: center;
@@ -99,12 +105,14 @@ header{
 
 }
 
+/* tamaÃ±o para el titulo del producto */
 .titulo-producto-carrito{
     font-size: 20px;
 
 
 }
 
+/* estilo para el tamaÃ±o del precio del producto */
 .precio-producto-carrito{
     font-weight: 700;
     font-size: 20px;
@@ -118,13 +126,14 @@ header{
     font-size: 20px;
 
 }
-
+/* ancho y alto del icono para quitar el producto del carrito */
 .icon-close{
     width: 25px;
     height: 25px;
 
 }
 
+/* estilo al momento de seleccionar el icono de quitar del carrito */
 .icon-close:hover{
     stroke: red;
     cursor:pointer;
@@ -143,6 +152,7 @@ header{
     font-weight: 700;
 }
 
+/* estilo para el tamaÃ±o de total a pagar */
 .total-pagar {
     font-size: 20px;
     font-weight: 900;
@@ -153,10 +163,7 @@ header{
     display: none;
 }
 
-
-
-
-/* Main */
+/* Estilos para contenedor de cada items */
 
 .container-items {
     display: grid;
@@ -164,14 +171,14 @@ header{
     gap: 20px;
 }
 
-/* Media query para pantallas más pequeñas */
+/* Media Query para pantallas mas PequeÃ±as */
 @media screen and (max-width: 768px) {
     .container-items {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Media query para pantallas aún más pequeñas */
+/* Media Query para pantallas mas PequeÃ±as  */
 @media screen and (max-width: 480px) {
     .container-items {
         grid-template-columns: 1fr;
@@ -218,6 +225,8 @@ header{
 
 
 }
+
+/* tamaÃ±o para el precio y el gruesor */
 
 .price {
     font-size: 20px;
@@ -276,9 +285,8 @@ header{
   .btn-add-cart:hover {
     background-color: #4e0b85;
     border: 1px solid #6d4aa5;
-    transform: translateY(3px); /* Desplazamos el botón hacia abajo 3 píxeles al ser seleccionado */
+    transform: translateY(3px); /* Se Desplaza el boton hacia abajo 3 pixeles al ser seleccionado */
 }
-
 
   /* Estilos para la factura en SweetAlert2 */
 .factura {
@@ -309,7 +317,6 @@ header{
 
 /* Estilos para el botÃ³n de confirmar compra */
 .btn-confirmar-compra {
-    /* ... (tus estilos actuales) */
     margin-top: 20px; /* Espacio adicional para separar el botÃ³n de la factura */
 }
 
@@ -363,16 +370,18 @@ header{
 .table-voucher tr:nth-child(odd) {
     background-color: #f9f9f9;
 }
+
+/* Estilos generales del footer */
 footer {
     background-color: black;
     color: white;
     text-align: center;
-    padding: 15px; /* Ajusta el padding según tus preferencias */
+    padding: 15px; /* Ajusta el padding segun tus preferencias */
     position: relative;
     bottom: -3cm; /* Desplaza el footer hacia abajo */
   }
   
-  /* Efecto en las letras (puedes ajustar según tu preferencia) */
+  /* Estilos del parrafo del footer */
   footer p {
     font-size: 1.2em;
     letter-spacing: 1px;
