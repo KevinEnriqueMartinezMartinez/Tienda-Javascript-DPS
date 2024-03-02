@@ -1,25 +1,43 @@
 # Tienda de Zapatos
 
-Este proyecto es una aplicación web de una tienda de zapatos desarrollada utilizando JavaScript. La aplicación proporciona una interfaz interactiva para que los usuarios exploren y compren zapatos.
+Este proyecto es una aplicaciï¿½n web de una tienda de zapatos desarrollada utilizando JavaScript. La aplicaciï¿½n proporciona una interfaz interactiva para que los usuarios exploren y compren zapatos.
 
-## Características
+## Caracterï¿½sticas
 
-- Catálogo de zapatos con imágenes y descripciones.
+- Catï¿½logo de zapatos con imï¿½genes y descripciones.
 - Funcionalidad de carrito de compras.
 - Proceso de pago simulado.
-- Filtrado por categorías y tallas.
+- Filtrado por categorï¿½as y tallas.
 
-## Tecnologías Utilizadas
+## Tecnologï¿½as Utilizadas
 
 - JavaScript
 - HTML
 - CSS
 
-## Instrucciones de Instalación
+## Capturas de Pantalla
 
-1. Clona el repositorio: `git clone https://github.com/tu_usuario/tienda-de-zapatos.git`
+![Catï¿½logo](screenshots/catalogo.png)
+_Catï¿½logo de zapatos con opciones de filtrado._
+
+![Carrito de Compras](screenshots/carrito.png)
+_Vista del carrito de compras con resumen de la orden._
+
+## Instrucciones de Instalaciï¿½n
+
+1. Clona el repositorio: `git clone https://github.com/KevinEnriqueMartinezMartinez/Tienda-Javascript-DPS`
 2. Abre el archivo `index.html` en tu navegador.
+
+## Contribuciï¿½n
+
+Si quieres contribuir, sigue estos pasos:
+
+1. Haz un fork del proyecto.
+2. Crea una nueva rama: `git checkout -b feature/nueva-funcionalidad`
+3. Realiza tus cambios y haz commit: `git commit -m 'Aï¿½ade nueva funcionalidad'`
+4. Haz push a la rama: `git push origin feature/nueva-funcionalidad`
+5. Abre un pull request.
 
 ## Licencia
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto estï¿½ bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para mï¿½s detalles.
