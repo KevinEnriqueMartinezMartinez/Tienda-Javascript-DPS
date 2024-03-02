@@ -158,11 +158,26 @@ header{
 
 /* Main */
 
-.container-items{
+.container-items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .container-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query para pantallas aún más pequeñas */
+@media screen and (max-width: 480px) {
+    .container-items {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .items{
     border-radius: 10px;
