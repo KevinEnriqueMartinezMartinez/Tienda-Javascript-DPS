@@ -1,0 +1,5 @@
+{
+    "editor.comments.ignoreEmptyLines": true,
+    "editor.dragAndDrop": true,
+    "editor.experimentalInlineEdit.showToolbar": "onHover"
+}
